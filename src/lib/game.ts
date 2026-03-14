@@ -1,7 +1,9 @@
 import { POINTS_PER_FOOD, WIN_SCORE } from "../config";
 import type { Direction, GameStatus, GameState, NonEmptyArray, Position } from "./types";
+import { GAME_STATUS } from "./types";
 
 export type { Direction, GameStatus, GameState, NonEmptyArray, Position };
+export { GAME_STATUS };
 
 const OPPOSITES = {
   UP: "DOWN",
@@ -55,7 +57,7 @@ export function createGame(gridSize: number, randomize: () => number = Math.rand
     food: placeFood(gridSize, snake, randomize),
     direction: "RIGHT",
     score: 0,
-    phase: "PLAYING",
+    phase: GAME_STATUS.PLAYING,
   };
 }
 
@@ -70,13 +72,13 @@ export function canChangeDirection(
 }
 
 export function changeDirection(state: GameState, newDirection: Direction): GameState {
-  if (state.phase !== "PLAYING") return state;
+  if (state.phase !== GAME_STATUS.PLAYING) return state;
   if (!canChangeDirection(state.direction, newDirection, state.snake.length)) return state;
   return { ...state, direction: newDirection };
 }
 
 export function stepGame(state: GameState, randomize: () => number = Math.random): GameState {
-  if (state.phase !== "PLAYING") return state;
+  if (state.phase !== GAME_STATUS.PLAYING) return state;
 
   const head = state.snake[0];
   const delta = DELTAS[state.direction];

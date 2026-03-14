@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import type { GameStatus } from "../../lib/game";
+import { GAME_STATUS } from "../../lib/game";
 import "./game-overlay.css";
 
 type EndOverlayProps = {
-  phase: Exclude<GameStatus, "PLAYING">;
+  phase: Exclude<GameStatus, typeof GAME_STATUS.PLAYING>;
   score: number;
   onRestart: () => void;
 };

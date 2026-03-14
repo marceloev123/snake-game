@@ -4,6 +4,7 @@ import {
   stepGame,
   changeDirection,
   canChangeDirection,
+  GAME_STATUS,
   type GameState,
   type Direction,
 } from "../lib/game";
@@ -43,7 +44,7 @@ export function useSnakeGame(): SnakeGame {
   });
 
   useEffect(() => {
-    if (!started || state.phase !== "PLAYING") return;
+    if (!started || state.phase !== GAME_STATUS.PLAYING) return;
 
     const id = setInterval(() => {
       const nextDirection = directionQueue.current.shift();

@@ -6,6 +6,7 @@ import {
   canChangeDirection,
   changeDirection,
   stepGame,
+  GAME_STATUS,
 } from "./game";
 import type { Direction, GameState } from "./game";
 
@@ -16,7 +17,7 @@ function makeState(overrides: Partial<GameState> = {}): GameState {
     food: { x: 0, y: 0 },
     direction: "RIGHT",
     score: 0,
-    phase: "PLAYING",
+    phase: GAME_STATUS.PLAYING,
     ...overrides,
   };
 }
@@ -74,7 +75,7 @@ describe("createGame", () => {
     const state = createGame(5);
     expect(state.score).toBe(0);
     expect(state.direction).toBe("RIGHT");
-    expect(state.phase).toBe("PLAYING");
+    expect(state.phase).toBe(GAME_STATUS.PLAYING);
   });
 
   it("food does not overlap the snake", () => {

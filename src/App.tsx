@@ -1,6 +1,7 @@
 import { GameBoard } from "./components/game-board";
 import { EndOverlay, StartOverlay } from "./components/game-overlay";
 import { useSnakeGame } from "./hooks/useSnakeGame";
+import { GAME_STATUS } from "./lib/game";
 import "./app.css";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
 
       <GameBoard snake={state.snake} food={state.food} gridSize={state.gridSize} />
 
-      {!started && state.phase === "PLAYING" && <StartOverlay />}
-      {state.phase !== "PLAYING" && (
+      {!started && state.phase === GAME_STATUS.PLAYING && <StartOverlay />}
+      {state.phase !== GAME_STATUS.PLAYING && (
         <EndOverlay phase={state.phase} score={state.score} onRestart={restart} />
       )}
     </main>
