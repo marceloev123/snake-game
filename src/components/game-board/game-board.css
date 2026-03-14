@@ -1,0 +1,5 @@
+@reference "../../index.css";
+
+.game-board {
+  @apply grid gap-0.75 bg-zinc-900 p-0.75 border border-zinc-700 rounded-lg shadow-2xl;
+}

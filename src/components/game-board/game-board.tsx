@@ -1,6 +1,7 @@
 import { memo } from "react";
-import { positionKey, type GameState } from "../lib/game";
-import { Cell } from "./cell";
+import { positionKey, type GameState } from "../../lib/game";
+import { Cell } from "../cell";
+import "./game-board.css";
 
 type GameBoardProps = Pick<GameState, "snake" | "food" | "gridSize">;
 
@@ -11,7 +12,7 @@ const GameBoard = memo(function GameBoard({ snake, food, gridSize }: GameBoardPr
 
   return (
     <div
-      className="grid gap-0.75 bg-zinc-900 p-0.75 border border-zinc-700 rounded-lg shadow-2xl"
+      className="game-board"
       style={{
         gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
         gridTemplateRows: `repeat(${gridSize}, 1fr)`,

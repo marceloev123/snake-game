@@ -42,12 +42,12 @@ pnpm test
 
 All gameplay constants are in `src/config.ts`:
 
-| Constant | Default | Description |
-|---|---|---|
-| `GRID_SIZE` | `20` | Board size (20 × 20 cells) |
-| `TICK_INTERVAL_MS` | `130` | Snake speed in milliseconds |
-| `POINTS_PER_FOOD` | `3` | Points earned per food eaten |
-| `WIN_SCORE` | `30` | Score required to win |
+| Constant           | Default | Description                  |
+| ------------------ | ------- | ---------------------------- |
+| `GRID_SIZE`        | `20`    | Board size (20 × 20 cells)   |
+| `TICK_INTERVAL_MS` | `130`   | Snake speed in milliseconds  |
+| `POINTS_PER_FOOD`  | `3`     | Points earned per food eaten |
+| `WIN_SCORE`        | `30`    | Score required to win        |
 
 ## Assumptions
 

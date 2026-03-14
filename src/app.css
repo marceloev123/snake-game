@@ -1,0 +1,13 @@
+@reference "./index.css";
+
+.app {
+  @apply bg-zinc-950 h-screen flex items-center justify-center flex-col gap-6;
+}
+
+.score-display {
+  @apply font-mono text-zinc-400 text-sm tracking-[0.3em] uppercase;
+}
+
+.score-value {
+  @apply text-emerald-400 font-bold text-xl;
+}
